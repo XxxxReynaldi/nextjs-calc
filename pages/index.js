@@ -133,16 +133,16 @@ function evaluate({ currentOperand, previousOperand, operation }) {
   return computation.toString();
 }
 
-// const INTEGER_FORMATTER = new Intl.NumberFormat('en-us', {
-//   maximumFractionDigits: 0,
-// });
+const INTEGER_FORMATTER = new Intl.NumberFormat('id-ID', {
+  maximumFractionDigits: 0,
+});
 
-// function formatOperand(operand) {
-//   if (operand == null) return;
-//   const [integer, decimal] = operand.split('.');
-//   if (decimal == null) return INTEGER_FORMATTER.format(integer);
-//   return `${INTEGER_FORMATTER.format(integer)}.${decimal}`;
-// }
+function formatOperand(operand) {
+  if (operand == null) return;
+  const [integer, decimal] = operand.split('.');
+  if (decimal == null) return INTEGER_FORMATTER.format(integer);
+  return `${INTEGER_FORMATTER.format(integer)}.${decimal}`;
+}
 
 export default function Home() {
   const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(reducer, {});
@@ -151,10 +151,10 @@ export default function Home() {
     <div className='calculator-grid'>
       <div className='output'>
         <div className='previous-operand'>
-          {/* {formatOperand(previousOperand)} {operation} */}
-          {previousOperand} {operation}
+          {formatOperand(previousOperand)} {operation}
+          {/* {previousOperand} {operation} */}
         </div>
-        <div className='current-operand'>{currentOperand}</div>
+        <div className='current-operand'>{formatOperand(currentOperand)}</div>
       </div>
       <button className='span-two' onClick={() => dispatch({ type: ACTIONS.CLEAR })}>
         AC
