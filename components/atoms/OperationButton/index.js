@@ -1,5 +1,5 @@
 /* eslint-disable import/no-cycle */
-import { ACTIONS } from '../../../pages';
+import { ACTIONS } from '../../../pages/admin';
 
 export default function OperationButton({ dispatch, operation }) {
   return (

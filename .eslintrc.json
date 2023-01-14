@@ -11,11 +11,23 @@
   },
   "plugins": ["react"],
   "rules": {
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-underscore-dangle": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "object-curly-newline": "off",
+
     "indent": "off",
     "linebreak-style": 0,
     "max-len": "off",
     "no-restricted-globals": 0,
     "react/button-has-type": 0,
+    "quotes": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": false, "optionalDependencies": false, "peerDependencies": false }
+    ],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": [0, { "ignore": 1, "customValidators": 1, "skipUndeclared": 1 }],
     "jsx-quotes": [2, "prefer-single"],
